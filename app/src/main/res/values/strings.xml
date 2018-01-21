@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">My Movie IAK</string>
     <string name="api_key">7f715f5c58878215fe3bbd17c2af69f7</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

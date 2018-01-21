@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="Movie">
+        <menu>
+            <item
+                android:id="@+id/action_now_playing"
+                android:icon="@drawable/ic_ps"
+                android:title="Now Palying"/>
+
+            <item
+                android:id="@+id/action_popular"
+                android:icon="@drawable/ic_ps"
+                android:title="Popular"/>
+
+            <item
+                android:id="@+id/action_up_coming"
+                android:icon="@drawable/ic_ps"
+                android:title="Up Coming"/>
+
+            <item
+                android:id="@+id/action_share"
+                android:icon="@drawable/ic_ps"
+                android:title="Share"/>
+
+        </menu>
+    </item>
+
+    <item android:title="About">
+        <menu>
+            <item
+                android:id="@+id/action_about"
+                android:icon="@drawable/ic_ps"
+                android:title="About"/>
+        </menu>
+    </item>
+</menu>
