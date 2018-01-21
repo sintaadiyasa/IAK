@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">My Movie IAK</string>
+    <string name="api_key">7f715f5c58878215fe3bbd17c2af69f7</string>
 </resources>
