@@ -22,25 +22,25 @@
                 android:icon="@drawable/ic_movies"
                 android:title="Up Coming"/>
 
+        </menu>
+    </item>
+
+    <item android:title="Other">
+        <menu>
+
             <item
                 android:id="@+id/action_share"
                 android:icon="@drawable/ic_share"
                 android:title="Share"/>
-
             <item
                 android:id="@+id/action_favorite"
                 android:icon="@drawable/ic_favorite"
                 android:title="Favorite"/>
 
-        </menu>
-    </item>
-
-    <item android:title="Exit">
-        <menu>
             <item
                 android:id="@+id/action_exit"
                 android:icon="@drawable/ic_exit"
-                android:title="About"/>
+                android:title="Exit"/>
         </menu>
     </item>
 </menu>
