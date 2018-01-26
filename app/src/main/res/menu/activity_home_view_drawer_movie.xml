@@ -4,32 +4,42 @@
         <menu>
             <item
                 android:id="@+id/action_now_playing"
-                android:icon="@drawable/ic_ps"
+                android:icon="@drawable/ic_movies"
                 android:title="Now Palying"/>
 
             <item
                 android:id="@+id/action_popular"
-                android:icon="@drawable/ic_ps"
+                android:icon="@drawable/ic_movies"
                 android:title="Popular"/>
 
             <item
+                android:id="@+id/action_top_rated"
+                android:icon="@drawable/ic_movies"
+                android:title="Top Rated"/>
+
+            <item
                 android:id="@+id/action_up_coming"
-                android:icon="@drawable/ic_ps"
+                android:icon="@drawable/ic_movies"
                 android:title="Up Coming"/>
 
             <item
                 android:id="@+id/action_share"
-                android:icon="@drawable/ic_ps"
+                android:icon="@drawable/ic_share"
                 android:title="Share"/>
+
+            <item
+                android:id="@+id/action_favorite"
+                android:icon="@drawable/ic_favorite"
+                android:title="Favorite"/>
 
         </menu>
     </item>
 
-    <item android:title="About">
+    <item android:title="Exit">
         <menu>
             <item
-                android:id="@+id/action_about"
-                android:icon="@drawable/ic_ps"
+                android:id="@+id/action_exit"
+                android:icon="@drawable/ic_exit"
                 android:title="About"/>
         </menu>
     </item>

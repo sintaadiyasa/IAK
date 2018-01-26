@@ -1,23 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--Old Color-->
-    <!--<color name="colorPrimary">#01376C</color>
-    <color name="colorPrimaryDark">#022D58</color>
-    <color name="colorAccent">#FFC107</color>-->
 
-    <!--new color-->
-    <color name="colorPrimary">#009688</color>
-    <color name="colorPrimaryDark">#00796B</color>
+    <color name="colorPrimary">#FFC107</color>
+    <color name="colorPrimaryDark">#f4ba09</color>
     <color name="colorAccent">#FF5252</color>
-
-    <!-- old basic colors -->
-    <!--<color name="colorWhite">#FFFFFF</color>
-    <color name="colorBlack">#000000</color>
-    <color name="colorGray">#ececec</color>
-    <color name="textPrimary">#424242</color>
-    <color name="textSecondary">#727272</color>
-    <color name="colorTransperant">#00000000</color>
-    <color name="deviderColor">#F5F5F5</color> -->
 
     <!--new basic color-->
     <color name="colorWhite">#FFFFFF</color>

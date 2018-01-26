@@ -1,6 +1,7 @@
-package com.example.sinta.myapplication.upcoming;
+package com.example.sinta.myapplication.activity;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.sinta.myapplication.R;
@@ -10,11 +11,11 @@ import com.example.sinta.myapplication.R;
  * Email: sintaadiyasa@gmail.com
  */
 
-public class UpComingActivity extends AppCompatActivity {
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_upcoming);
+public class AboutActivity extends AppCompatActivity {
 
+    @Override
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_about);
     }
 }

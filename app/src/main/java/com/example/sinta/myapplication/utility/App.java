@@ -1,12 +1,14 @@
-package com.example.sinta.myapplication;
+package com.example.sinta.myapplication.utility;
 
 import android.app.Application;
 
+import com.example.sinta.myapplication.api.MovieApi;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import org.greenrobot.eventbus.EventBus;
 
+import io.realm.Realm;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -28,20 +30,13 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        createEventBus();
         createGson();
         createRetrofit();
+        Realm.init(this);
     }
 
     private void createGson() {
         gson = new GsonBuilder().create();
-    }
-
-    private void createEventBus() {
-        eventBus = EventBus.builder()
-                .logNoSubscriberMessages(false)
-                .sendNoSubscriberEvent(false)
-                .build();
     }
 
     private void createRetrofit() {
@@ -53,10 +48,6 @@ public class App extends Application {
 
     public Gson getGson() {
         return gson;
-    }
-
-    public EventBus getEventBus() {
-        return eventBus;
     }
 
     public Retrofit getRetrofit() {
