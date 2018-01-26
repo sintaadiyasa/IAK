@@ -1,10 +1,12 @@
 package com.example.sinta.myapplication.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -18,6 +20,9 @@ import com.example.sinta.myapplication.model.MovieDetail;
 import com.example.sinta.myapplication.presenter.MovieDetailPresenter;
 import com.example.sinta.myapplication.utility.Constant;
 import com.example.sinta.myapplication.view.MovieDetailView;
+
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -57,6 +62,8 @@ public class MovieDetailActivity extends AppCompatActivity implements MovieDetai
     private MovieDetailPresenter presenter;
     private String jenis;
 
+    private MovieDetail movie;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -84,9 +91,15 @@ public class MovieDetailActivity extends AppCompatActivity implements MovieDetai
         return true;
     }
 
+    private boolean isPlaying(Date date) {
+        return GregorianCalendar.getInstance().getTime()
+                .before(date);
+    }
+
     @Override
     public void onLoadData(final MovieDetail movie) {
         toolbar.setTitle(movie.getTitle());
+        this.movie = movie;
         Glide.with(this).load(Constant.Api.IMAGE_PATH + movie.getHeader()).into(header);
         Glide.with(this).load(Constant.Api.IMAGE_PATH + movie.getPoster()).into(poster);
         description.setText(movie.getDescription());
@@ -119,6 +132,32 @@ public class MovieDetailActivity extends AppCompatActivity implements MovieDetai
                 else presenter.setFavorite(true, movie);
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_share:
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, setShare());
+                sendIntent.setType("text/plain");
+                startActivity(sendIntent);
+                break;
+        }
+        return true;
+    }
+
+    private String setShare() {
+        String content = "[Movie DB - Indonesia Android Kejar]\n";
+        content += "Check this out!!\n" +
+                movie.getTitle() + " ";
+        if (isPlaying(movie.getDate())) {
+            content += "\n This movie will release on " + movie.getDate().toLocaleString().substring(0, 12);
+        }
+        content += "\n\nCheck my github: \n" +
+                Constant.LINK;
+        return content;
     }
 
     @Override

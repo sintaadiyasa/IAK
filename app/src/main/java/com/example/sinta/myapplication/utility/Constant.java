@@ -6,6 +6,7 @@ package com.example.sinta.myapplication.utility;
  */
 
 public interface Constant {
+    String LINK = "https://github.com/sintaadiyasa";
     interface Api{
         static String BASE_URL = "https://Api.themoviedb.org/3/movie/";
         static String API_KEY = "7f715f5c58878215fe3bbd17c2af69f7";

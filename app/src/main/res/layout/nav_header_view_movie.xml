@@ -18,7 +18,7 @@
     <ImageView
         android:layout_width="@dimen/icon_medium"
         android:layout_height="@dimen/icon_medium"
-        android:src="@drawable/ic_account_circle"/>
+        android:src="@drawable/sinta"/>
 
     <TextView
         android:id="@+id/tv_username"
