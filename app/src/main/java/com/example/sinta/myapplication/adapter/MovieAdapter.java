@@ -11,6 +11,7 @@ import com.bumptech.glide.Glide;
 import com.example.sinta.myapplication.R;
 import com.example.sinta.myapplication.holder.MovieViewHolder;
 import com.example.sinta.myapplication.model.Movie;
+import com.example.sinta.myapplication.utility.Constant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,6 +61,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieViewHolder>  {
         Movie movie = movies.get(position);
         Glide.with(context).load(IMAGE_PATH + movie.getImagePoster()).into(holder.getImage());
         holder.getTitle().setText(movie.getTitle());
+        holder.getRating().setText(Constant.Api.RATING + movie.getRating());
     }
 
     @Override

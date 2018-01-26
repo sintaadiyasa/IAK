@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.sinta.myapplication.R;
 import com.example.sinta.myapplication.activity.MovieDetailActivity;
-import com.example.sinta.myapplication.fragment.FavoriteMovieFragment;
+import com.example.sinta.myapplication.fragment.FavoriteMovieFragment.OnListFragmentInteractionListener;
 import com.example.sinta.myapplication.model.MovieDetail;
 import com.example.sinta.myapplication.utility.Constant;
 
@@ -29,10 +29,10 @@ import butterknife.ButterKnife;
 
 public class MovieFavoriteAdapter extends RecyclerView.Adapter<MovieFavoriteAdapter.ViewHolder> {
     private final List<MovieDetail> mValues;
-    private final FavoriteMovieFragment.OnListFragmentInteractionListener mListener;
+    private final OnListFragmentInteractionListener mListener;
     private Context context;
 
-    public MovieFavoriteAdapter(List<MovieDetail> items, FavoriteMovieFragment.OnListFragmentInteractionListener listener,
+    public MovieFavoriteAdapter(List<MovieDetail> items, OnListFragmentInteractionListener listener,
                                          Context context) {
         mValues = items;
         mListener = listener;
@@ -73,7 +73,7 @@ public class MovieFavoriteAdapter extends RecyclerView.Adapter<MovieFavoriteAdap
     public class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.root_layout)
         ConstraintLayout rootLayout;
-        @BindView(R.id.image)
+        @BindView(R.id.iv_image)
         ImageView image;
         @BindView(R.id.tv_title)
         TextView title;

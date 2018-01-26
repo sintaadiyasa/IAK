@@ -35,6 +35,7 @@ public class MovieViewHolder extends RecyclerView.ViewHolder{
         this.context = context;
         this.callback = callback;
         ButterKnife.bind(this, itemView);
+
         rootLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

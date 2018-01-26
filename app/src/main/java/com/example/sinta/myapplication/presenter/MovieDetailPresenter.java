@@ -25,7 +25,7 @@ public class MovieDetailPresenter {
 
     public void loadDetail(int id, String jenis){
         getView().onLoading();
-        if(!jenis.equals(Constant.FragmentChooser.  FAVORITE)){
+        if(!jenis.equals(Constant.FragmentChooser.FAVORITE)){
             Call<MovieDetail> call = App.getInstance().getMovieApi().getDetail(id, Constant.Api.API_KEY);
             call.enqueue(new Callback<MovieDetail>() {
                 @Override

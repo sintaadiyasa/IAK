@@ -12,8 +12,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.example.sinta.myapplication.fragment.FavoriteMovieFragment;
+import com.example.sinta.myapplication.fragment.FavoriteMovieFragment.OnListFragmentInteractionListener;
 import com.example.sinta.myapplication.fragment.MovieFragment;
 import com.example.sinta.myapplication.R;
+import com.example.sinta.myapplication.model.MovieDetail;
 
 
 import butterknife.BindView;
@@ -26,7 +28,7 @@ import static com.example.sinta.myapplication.utility.Constant.FragmentChooser.T
 import static com.example.sinta.myapplication.utility.Constant.FragmentChooser.UPCOMING;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, OnListFragmentInteractionListener {
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -92,12 +94,17 @@ public class MainActivity extends AppCompatActivity
             fragment = MovieFragment.newInstance(TOP_RATED);
             setFragment(fragment, TOP_RATED);
         } else if (id == R.id.action_favorite) {
-            fragment = MovieFragment.newInstance(FAVORITE);
+            fragment = FavoriteMovieFragment.newInstance();
             setFragment(fragment, FAVORITE);
         } else if (id == R.id.action_exit) {
             System.exit(0);
         }
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onListFragmentInteraction(MovieDetail item) {
+
     }
 }
